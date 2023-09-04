@@ -3,7 +3,9 @@ package lexicon.se;
 import lexicon.se.interfaces.DoStringStuff;
 import lexicon.se.interfaces.DoubleOperator;
 import lexicon.se.interfaces.IntRandom;
+import lexicon.se.interfaces.Printer;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 
 public class LambdaDemo{
@@ -34,6 +36,9 @@ public class LambdaDemo{
         // int generate();
         IntRandom randomNumberOperator = () -> new Random().nextInt();
         System.out.println(randomNumberOperator.generate());
+
+        Printer printMessage = message -> System.out.println(message) ;
+        printMessage.print("Hello Lambda!");
 
     }
 }
